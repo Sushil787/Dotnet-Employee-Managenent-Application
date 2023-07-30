@@ -52,7 +52,7 @@ private readonly ILogger<EmployeeController> _logger;
             if(employee!=null){
                 mvcDemoDbContext.Employees.Remove(employee);
                 await mvcDemoDbContext.SaveChangesAsync();
-                return await Task.Run(()=>RedirectToAction("Index"));
+                return  RedirectToAction("Index");
             }
             return NotFound();  
         }
@@ -68,40 +68,11 @@ private readonly ILogger<EmployeeController> _logger;
         [HttpPost]
         public async Task<IActionResult> Update(Employee employee)
         {
-
-            var dbEmployee =  mvcDemoDbContext.Employees.Update(employee);
+            
+            _logger.Log(LogLevel.Error,employee.ToString());
+            mvcDemoDbContext.Employees.Update(employee);
             await mvcDemoDbContext.SaveChangesAsync();
-            return await Task.Run(()=>RedirectToAction("Index"));
-            // var newEmployee = new Employee(){
-            // Id=Guid.NewGuid(),
-            // Name= addEmployeeViewModel.Name??"",
-            // Email= addEmployeeViewModel.Email??"sushil@gmai.com",
-            // Salary= addEmployeeViewModel.Salary??0,
-            // Department = addEmployeeViewModel.Department??"",
-            // DateOfBirth = addEmployeeViewModel.DateOfBirth?? DateTime.Now
-
-            // };
-            // var employee = await mvcDemoDbContext.Employees.FindAsync(addEmployeeViewModel.Id);
-            // var dbEmployee = await mvcDemoDbContext.Employees.FindAsync(employee.Id);
-            //  mvcDemoDbContext.Employees.Update(employee);
-            //  await mvcDemoDbContext.SaveChangesAsync();
-            // _logger.LogInformation("-----------------------------" + dbEmployee + "-----------------------------");
-            // if (dbEmployee != null)
-
-            // {
-            //     dbEmployee.Name = employee.Name;
-            //     dbEmployee.DateOfBirth = employee.DateOfBirth;
-            //     dbEmployee.Department = employee.Department;
-            //     dbEmployee.Salary = employee.Salary;
-            //     dbEmployee.Email = employee.Email;
-
-            //     await mvcDemoDbContext.SaveChangesAsync();
-            //     return RedirectToAction("Index");
-            // }
-            return await Task.Run(()=>RedirectToAction("Index"));
-            //    return Redirect
-
-
+            return  RedirectToAction("Index");
         }
 
 

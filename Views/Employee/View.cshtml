@@ -2,9 +2,9 @@
 @model dotnetoop.Models.Domain.Employee
 
 
-<h2>Add Employee</h2>
+<h2>Update Employee</h2>
   
-<form method="post" action="Update" class="mt-5">
+<form method="post" asp-action="Update" asp-controller="Employee" class="mt-5">
     <div class="mb-3">
     <label  class="form-label" >Id</label>
     <input type="text" class="form-control" readonly value="@Model.Id" required asp-for="Id">
