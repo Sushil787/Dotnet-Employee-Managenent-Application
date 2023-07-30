@@ -12,10 +12,11 @@ namespace dotnetoop.Data
         
         public MVCDemoDbContext(DbContextOptions options):base(options)
         {
-            
+             
         }
         public  DbSet<Employee> Employees { get; set; }
 
+       
     }
 
 

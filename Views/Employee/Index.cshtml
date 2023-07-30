@@ -1,8 +1,6 @@
 
 @model List<dotnetoop.Models.Domain.Employee>
-@{
-    ViewData["Title"] = "Index";
-}
+
 
 
 <h1>Employee</h1>
@@ -25,7 +23,10 @@
     <td>@item.Email</td>
     <td>@item.Salary</td>
     <td>@item.Department</td>
-    <td>@item.DateOfBirth.ToString("dd/MM/yyyy HH:mm:ss")</td>
+    <td>@item.DateOfBirth.ToString("dd/MM/yyyy")</td>
+    <th><a href="Employee/View/@item.Id">view</a></th>
+    <th><a href="Employee/Delete/@item.Id">Delete</a></th>
+
 
 
 </tr>
