@@ -18403,6 +18403,16 @@
       "FilePath": "/home/sushil/dotnet-oop/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/sushil/dotnet-oop/Views/Employee/Add.cshtml",
+      "TargetPath": "Views\\Employee\\Add.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/sushil/dotnet-oop/Views/Employee/Index.cshtml",
+      "TargetPath": "Views\\Employee\\Index.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.3"
